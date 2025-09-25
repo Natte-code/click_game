@@ -8,10 +8,35 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+
+    <h1>Clicker game</h1> 
     <div class="main">
-        <h1>Clicker game</h1>   
-        <h3 class="num">0</h3>
-        <button class="btn">Click me!</button>
+          
+        <h3 id="num">0</h3>
+        <button id="btn">Click me!</button>
+    </div>
+    <div id="upgrades">
+        <table>
+            <tr>
+                <th>Upgrade</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Effect</th>
+            </tr>
+            <tr>
+                <td>auto click</td>
+                <td id="clickeramount">0</td>
+                <td id="priceclick">0 cc</td>
+                <td>+1 click per second</td>
+                <td><button id="buyclickers" disabled="disabled">buy</button></td>
+            </tr>
+        </table>
+
+
+
+
+        
+        
     </div>
 
 </body>
