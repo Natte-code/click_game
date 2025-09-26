@@ -13,4 +13,82 @@ body {
     width: 30vh;
     height: 30vh;
     align-content: center;
+
 }
+
+#upgrades{
+    display: grid;
+    margin-left: 40px;
+
+    left: 30vh;
+    top: -30vh;
+    background-color: rgb(190, 34, 34);
+    text-align: center;
+    width: 30vh;
+    height: 25vh;
+}
+
+
+
+
+
+#btn {
+    position: relative;
+    display: inline-block;
+    padding: 0.6em 2em;
+    background-color: #111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.2s ease;
+}
+
+/* Gradient-ram som ligger bakom knappen */
+#btn::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(
+        90deg,
+        #ff0000, #ff8000, #ffff00, #80ff00, 
+        #00ff80, #00ffff, #0080ff, 
+        #8000ff, #ff0080, #ff0000
+    );
+    background-size: 400% 100%;
+    border-radius: 8px;
+    filter: blur(5px);
+    z-index: -1;
+    animation: gradientMove 20s linear infinite;
+}
+
+/* Animation för gradientens rörelse */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 400% 50%;
+    }
+}
+
+/* Hover-effekt för knappen */
+#btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Aktivt tillstånd för knappen */
+#btn:active {
+    transform: translateY(1px);
+}
+
