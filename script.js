@@ -23,20 +23,40 @@ const btn = document.getElementById("btn");
 
 // amounts
 const clickeramountEl = document.getElementById("clickeramount");
+const xclicksEl = document.getElementById("xclicks");
 
 //price counts
-const clickerspriceEl = document.getElementById("clickersprice");
+const clickerspriceEl = document.getElementById("priceclick");
 const priceclick = document.getElementById("pricexclck");
+
+const timebtwnEl = document.getElementById("timebtwnc"); 
 const extraclickspriceEl = document.getElementById("timemsbt");
-const timebtwnEl = document.getElementById("timebtwnc");
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // uppdaterar ui func
 function updateUI(){
     numEl.innerText = clicks;
-    clickeramountEl.innerHTML = clickeramount;
-    priceclick.innerHTML = clickersprice;
+
     extraclickspriceEl.innerHTML = extraclicksprice;
+
+    // uppdaterar ui för att visa korrekt mängd clicks och pris
+
+    clickeramountEl.innerHTML = clickeramount;
+    clickerspriceEl.innerHTML = clickersprice + " cc";
+
+    xclicksEl.innerText = extraclicks; // uppdaterar antal extra clicks
+    priceclick.innerHTML = extraclicksprice + " cc"; // uppdaterar pris
+
+
+
+
+
+
     timebtwnEl.innerText = autotick + " ms";
 
     if (clicks >= clickersprice){
@@ -67,7 +87,7 @@ function buyclcks(){
             clicks -= clickersprice;
 
             clickers = true;
-            clickersprice = Math.floor(clickersprice * 1.5); // priset ökar
+            clickersprice = clickersprice + 10; // priset ökar
 
             if (clicks < 0) clicks = 0; // safety
             updateUI();
@@ -104,7 +124,7 @@ function buyxclicks(){
             extraclicks++;
             clicks -= extraclicksprice;
 
-            extraclicksprice = Math.floor(extraclicksprice * 0.3); // priset ökar
+            extraclicksprice = extraclicksprice + 10; // priset ökar
             xtraclicks = true;
 
             if (clicks < 0) clicks = 0; // safety
